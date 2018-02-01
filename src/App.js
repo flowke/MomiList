@@ -14,13 +14,17 @@ import {
 
 import Header from './component/header';
 import Home from './pages/home';
+import Card from './component/card';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Header></Header>
-        <Home></Home>
+        {/* <Header></Header> */}
+        {/* <Home></Home> */}
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
       </View>
     );
   }
@@ -30,5 +34,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
   },
 });

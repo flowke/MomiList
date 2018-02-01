@@ -5,10 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import Nav from './Nav';
-
-export default class Home extends Component{
-
+export default class Name extends Component{
   constructor(props){
       super(props);
   }
@@ -16,7 +13,7 @@ export default class Home extends Component{
   render(){
     return (
       <View style={S.box}>
-        <Nav/>
+        <Text> 最热 </Text>
       </View>
     )
   }
@@ -24,6 +21,8 @@ export default class Home extends Component{
 
 const S = StyleSheet.create({
   box: {
-    flex: 1
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })

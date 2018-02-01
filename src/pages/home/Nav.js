@@ -5,9 +5,21 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {TabNavigation} from 'react-navigation';
+import {TabNavigator} from 'react-navigation';
 
-export default class NavBar extends Component{
+import Hotest from './hotest';
+import Newest from './newest';
+
+export default HomeSubNav = TabNavigator({
+  Hotest: {
+    screen: Hotest,
+  },
+  Newest: {
+    screen: Newest
+  }
+});
+
+ class NavBar extends Component{
   constructor(props){
       super(props);
   }
