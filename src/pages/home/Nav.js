@@ -3,21 +3,16 @@ import {
   View,
   Text,
   StyleSheet,
+  PixelRatio,
 } from 'react-native';
 
 import {
   TabNavigator,
-  TabBarTop
+  TabBarTop,
 } from 'react-navigation';
 
 import Hotest from './hotest';
 import Newest from './newest';
-
-function Name(){
-  return (
-    <View><Text>fds</Text></View>
-  )
-}
 
 export default  HomeSubNav = TabNavigator(
   {
@@ -31,9 +26,25 @@ export default  HomeSubNav = TabNavigator(
       screen: Newest
     }
   },{
-    // tabBarComponent: TabBarTop,
+    tabBarComponent: TabBarTop,
     tabBarPosition: 'top',
     swipeEnabled: true,
-    animationEnabled: true
+    animationEnabled: true,
+    tabBarOptions: {
+      inactiveTintColor: '#EC4D3D',
+      activeTintColor: '#EC4D3D',
+      labelStyle: {
+        fontWeight: '800'
+      },
+      indicatorStyle: {
+        height: 4,
+        backgroundColor: '#EC4D3D'
+      },
+      style: {
+        backgroundColor: '#fff',
+      },
+    },
+
+
   }
 );
