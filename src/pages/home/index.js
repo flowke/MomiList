@@ -24,6 +24,8 @@ export default class Home extends Component{
 
 const S = StyleSheet.create({
   box: {
-    flex: 1
+    flex: 1,
+    // height: 300,
+    // backgroundColor: 'red',
   }
 })

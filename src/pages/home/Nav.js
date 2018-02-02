@@ -5,30 +5,35 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import {TabNavigator} from 'react-navigation';
+import {
+  TabNavigator,
+  TabBarTop
+} from 'react-navigation';
 
 import Hotest from './hotest';
 import Newest from './newest';
 
-export default HomeSubNav = TabNavigator({
-  Hotest: {
-    screen: Hotest,
-  },
-  Newest: {
-    screen: Newest
-  }
-});
-
- class NavBar extends Component{
-  constructor(props){
-      super(props);
-  }
-
-  render(){
-    return (
-      <View>
-
-      </View>
-    )
-  }
+function Name(){
+  return (
+    <View><Text>fds</Text></View>
+  )
 }
+
+export default  HomeSubNav = TabNavigator(
+  {
+    Hotest: {
+      screen: Hotest,
+      navigationOptions: {
+        title: 'Home'
+      }
+    },
+    Newest: {
+      screen: Newest
+    }
+  },{
+    // tabBarComponent: TabBarTop,
+    tabBarPosition: 'top',
+    swipeEnabled: true,
+    animationEnabled: true
+  }
+);
