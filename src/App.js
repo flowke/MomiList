@@ -14,6 +14,7 @@ import {
 
 import Header from './component/header';
 import Home from './pages/home';
+import BottomTabBar from './pages/bottomTabBar';
 import Card from './component/card';
 
 export default class App extends Component<{}> {
@@ -21,8 +22,8 @@ export default class App extends Component<{}> {
     return (
       <View style={styles.container}>
         <Header></Header>
-        <Home></Home>
-        
+        {/* <Home></Home> */}
+        <BottomTabBar></BottomTabBar>
       </View>
     );
   }
