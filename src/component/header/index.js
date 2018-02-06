@@ -4,8 +4,10 @@ import {
   Text,
   TextInput,
   StyleSheet,
+  Platform
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Octicons';
 
 export default class Header extends Component{
   constructor(props){
@@ -17,11 +19,19 @@ export default class Header extends Component{
       <View style={S.header}>
         <View style={S.titleWrap}></View>
         <Text style={S.title}>MomiList</Text>
+
         <View style={S.inputWrap}>
+          <Icon
+            style={S.searchIcon}
+            name="search"
+            size={16}
+            color="#4E5659"
+          />
           <TextInput
             style={S.input}
             placeholder="search"
             autoCorrect={false}
+            underlineColorAndroid="transparent"
           ></TextInput>
         </View>
       </View>
@@ -31,9 +41,17 @@ export default class Header extends Component{
 
 const S = StyleSheet.create({
   header: {
-    height: 102,
     backgroundColor: '#FF3B30',
-    paddingTop: 20,
+    ...Platform.select({
+      ios: {
+        height: 94,
+        paddingTop: 20
+      },
+      android: {
+        height: 98,
+        paddingTop: 24
+      }
+    })
   },
   titleWrap: {
     marginTop: 5,
@@ -45,15 +63,23 @@ const S = StyleSheet.create({
     color: '#fff'
   },
   inputWrap: {
-    height: 36,
+    flexDirection: 'row',
+    height: 30,
     paddingHorizontal: 8,
     marginTop: 8,
     marginHorizontal: 8,
     borderRadius: 6,
-    backgroundColor: 'rgba(255,255,255,0.6)'
+    backgroundColor: 'rgba(255,255,255,0.6)',
+    alignItems: 'center',
+  },
+  searchIcon: {
+    marginRight: 8
   },
   input: {
-    height: 36,
-    color: '#1a2429'
+    flex: 1,
+    height: 30,
+    color: '#1a2429',
+    padding: 0,
+
   }
 })

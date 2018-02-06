@@ -9,20 +9,23 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBar
 } from 'react-native';
 
 import Header from './component/header';
 import Home from './pages/home';
 import BottomTabBar from './pages/bottomTabBar';
-import Card from './component/card';
 
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar
+          translucent
+          backgroundColor='transparent'
+        />
         <Header></Header>
-        {/* <Home></Home> */}
         <BottomTabBar></BottomTabBar>
       </View>
     );

@@ -19,7 +19,7 @@ export default  HomeSubNav = TabNavigator(
     Hotest: {
       screen: Hotest,
       navigationOptions: {
-        title: 'Home'
+        title: 'Hotest'
       }
     },
     Newest: {
@@ -44,7 +44,5 @@ export default  HomeSubNav = TabNavigator(
         backgroundColor: '#fff',
       },
     },
-
-
   }
 );

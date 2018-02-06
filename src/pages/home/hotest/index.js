@@ -3,7 +3,11 @@ import {
   View,
   Text,
   StyleSheet,
+  FlatList,
 } from 'react-native';
+
+import Card from '../../../component/card';
+import cardsData from '../../../component/card/mockData';
 
 export default class Name extends Component{
   constructor(props){
@@ -13,7 +17,21 @@ export default class Name extends Component{
   render(){
     return (
       <View style={S.box}>
-        <Text> 最热 </Text>
+        <View style={S.listWrap}>
+          <FlatList
+            data={cardsData}
+            keyExtractor={(item)=>item.id}
+            renderItem={({item})=>(
+              <Card
+                {...{
+                  source: item.source,
+                  content: item.content,
+                  time: item.time
+                }}
+              />
+            )}
+          />
+        </View>
       </View>
     )
   }
@@ -22,7 +40,9 @@ export default class Name extends Component{
 const S = StyleSheet.create({
   box: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+  },
+  listWrap: {
+    flex: 1,
+    marginTop: 18,
   }
 })

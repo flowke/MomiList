@@ -69,6 +69,8 @@ export default TabNavigator({
 },{
   tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
+  swipeEnabled: false,
+  animationEnabled: false,
   tabBarOptions: {
     showLabel: false,
     activeTintColor: '#EC4D3D',
